@@ -1,0 +1,25 @@
+{
+  "name": "grafica-cacheclear",
+  "version": "1.0.0",
+  "description": "App en electron para limpiar el cache de la tarjeta gráfica",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "electron",
+    "cache-clear",
+    "limpieza-cache",
+    "multiplatform"
+  ],
+  "author": "Daniel Bautista P.",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron/packager": "^18.3.6",
+    "electron": "^35.0.2"
+  },
+  "dependencies": {
+    "bulma": "^1.0.3"
+  }
+}

@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "AlexBrush";
+  src: url("../fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
+}
+
+/* Firma*/
+#miFirma {
+  font-family: "AlexBrush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+}
+
+/* Ajustar el card del textarea */
+.fixed-card {
+  margin-top: 0.5rem;
+}
+
+.fixed-card .card-content-proceso {
+  height: 180px; /* Mantiene el tamaño fijo */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+/* Ajustar el alto del footer */
+footer.footer {
+  padding: 1rem; /* Ajusta el espacio interno del footer */
+  height: auto; /* Altura automática basada en el contenido */
+  display: flex;
+  align-items: center; /* Alinea el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  position: fixed; /* Posición fija */
+  bottom: 0; /* Pegado al fondo */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Oculta la barra de scroll vertical */
+html,
+body {
+  overflow-y: hidden;
+  height: 100%; /* Asegura que el contenido llene toda la ventana */
+  margin: 0; /* Elimina márgenes para evitar desplazamiento */
+}
+
+.section {
+  padding-top: 0; /* Elimina el espacio superior de la sección */
+  margin-top: 1.5rem; /* Asegura que no haya márgenes innecesarios */
+}
+
+/* Ventana modal */
+.modal-card {
+  max-width: 400px; /* Ajusta el ancho del modal */
+}
+
+.modal-card-foot .button {
+  margin-right: 10px; /* Añade espacio entre los botones */
+}
+
+.modal-card-foot .button:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último botón */
+}

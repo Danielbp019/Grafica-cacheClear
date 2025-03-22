@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <title>Limpieza de caché para gráfica</title>
+    <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet" />
+    <link href="assets/css/estilo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <!-- Título principal -->
+            <h1 class="title">Limpieza de caché para gráfica</h1>
+            <!-- Subtítulo -->
+            <h2 class="subtitle">para NVIDIA</h2>
+
+            <!-- Card con el botón -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <button id="deleteCacheButton" class="button is-success">Borrar Caché de NVIDIA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card para mostrar las rutas de caché -->
+            <p>Rutas de Limpieza:</p>
+            <div class="card fixed-card">
+                <div class="card-content">
+                    <div class="content">
+                        <p id="nvidiaPaths"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card para mostrar estado actual -->
+            <p>Información de proceso:</p>
+            <div class="card fixed-card">
+                <div class="card-content-proceso">
+                    <div class="content">
+                        <p id="proceso" style="white-space: pre-line;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Advertencia</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <p>Esta acción eliminará permanentemente la caché de NVIDIA. ¿Estás seguro de que deseas continuar?</p>
+            </section>
+            <footer class="modal-card-foot">
+                <button id="confirmDeleteButton" class="button is-danger">Sí, estoy seguro</button>
+                <button class="button cancelButton">Cancelar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer is-custom-footer">
+        <div class="content has-text-centered">
+            Hecho con Electron <span id="electron-version"></span> y Node.js <span id="node-version"></span>,
+            &copy; <span id="miFirma" style="margin-left: 9px;">Daniel Bautista Pradilla.</span>
+        </div>
+    </footer>
+
+    <script src="./renderer.js"></script>
+</body>
+
+</html>

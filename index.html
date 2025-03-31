@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <!-- Política de Seguridad de Contenido (CSP) estricta -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Limpieza de caché para gráfica</title>
     <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet" />
     <link href="assets/css/estilo.css" rel="stylesheet" />
@@ -31,24 +34,24 @@
             <div class="card fixed-card">
                 <div class="card-content">
                     <div class="content">
-                        <p id="nvidiaPaths"></p>
+                        <div id="nvidiaPaths"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Card para mostrar estado actual -->
+            <!-- Card para mostrar el estado del proceso -->
             <p>Información de proceso:</p>
             <div class="card fixed-card">
                 <div class="card-content-proceso">
                     <div class="content">
-                        <p id="proceso" style="white-space: pre-line;"></p>
+                        <div id="proceso" style="white-space: pre-line;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal de confirmación -->
     <div class="modal" id="confirmModal">
         <div class="modal-background"></div>
         <div class="modal-card">

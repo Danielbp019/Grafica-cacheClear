@@ -16,7 +16,7 @@ Se usa https://github.com/electron/packager para realizar el empaquetado.
 Comando de empaquetado:
 
 ```sh
-npx electron-packager . Grafica-cacheClear --platform=win32 --arch=x64 --icon=assets/img/favicon.ico --overwrite
+npx electron-packager . Grafica-cacheClear --platform=win32 --arch=x64 --icon=assets/img/favicon.ico --overwrite --asar --ignore=ejecutable
 
 ```
 
@@ -26,3 +26,30 @@ npx electron-packager . Grafica-cacheClear --platform=win32 --arch=x64 --icon=as
 4.  `--arch=x64` define la arquitectura de 64 bits.
 5.  `--icon=assets/img/favicon.ico` establece el ícono de tu aplicación.
 6.  `--overwrite` sobrescribe cualquier paquete existente con el mismo nombre.
+7.  `--asar` activa la creación del archivo asar para compresión de los archivos de la aplicación.
+
+### Notas:
+
+ModClean es una herramienta diseñada para limpiar la carpeta node_modules eliminando archivos y directorios innecesarios que suelen ocupar espacio y ralentizar procesos como despliegues o empaquetado.
+
+```sh
+npx modclean --run
+
+```
+
+Árbol:
+
+```sh
+grafica_cache_clear/
+├── index.html
+├── main.js
+├── preload.js
+├── renderer.js
+└── assets/
+    ├── css/
+    │   └──estilo.css
+    ├── fonts/
+    ├── img/
+    └── marcas/
+        └── nvidia.js
+```

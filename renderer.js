@@ -1,6 +1,6 @@
 // Aquí se manejará la lógica de interacción entre la UI y el backend.
 
-// Se muestran las rutas en el index actualizando el contenido de <p id="nvidiaPaths"></p>
+// Se muestran las rutas en el index actualizando el contenido de id="nvidiaPaths">
 const { getNvidiaCachePaths } = require("./assets/marcas/nvidia");
 document.addEventListener("DOMContentLoaded", () => {
   const nvidiaPathsElement = document.getElementById("nvidiaPaths");
@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     procesoElement.innerHTML += `<p>${message}</p>`;
 
     // Desplaza automáticamente al final para ver el último mensaje
-    const container = procesoElement.parentElement;
-    container.scrollTop = container.scrollHeight;
+    const container = procesoElement.closest(".card-content-proceso");
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   });
 });

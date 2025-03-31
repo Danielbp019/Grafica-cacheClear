@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <!-- Política de Seguridad de Contenido (CSP) estricta -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self';">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Limpieza de caché para gráfica</title>
     <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet" />
@@ -44,7 +44,7 @@
             <div class="card fixed-card">
                 <div class="card-content-proceso">
                     <div class="content">
-                        <div id="proceso" style="white-space: pre-line;"></div>
+                        <div id="proceso"></div>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
     <footer class="footer is-custom-footer">
         <div class="content has-text-centered">
             Hecho con Electron <span id="electron-version"></span> y Node.js <span id="node-version"></span>,
-            &copy; <span id="miFirma" style="margin-left: 9px;">Daniel Bautista Pradilla.</span>
+            &copy; <span id="miFirma">Daniel Bautista Pradilla.</span>
         </div>
     </footer>
 

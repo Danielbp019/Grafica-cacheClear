@@ -9,6 +9,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 26px;
+  margin-left: 9px;
 }
 
 /* Ajustar el card del textarea */
@@ -19,6 +20,7 @@
 .fixed-card .card-content-proceso {
   height: 180px; /* Mantiene el tamaño fijo */
   overflow-y: auto; /* Permite el desplazamiento vertical */
+  white-space: pre-line;
 }
 
 /* Ajustar el alto del footer */

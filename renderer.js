@@ -1,26 +1,20 @@
 // Aquí se manejará la lógica de interacción entre la UI y el backend.
 
-// Se muestran las rutas en el index actualizando el contenido de id="nvidiaPaths">
-const { getNvidiaCachePaths } = require("./assets/marcas/nvidia");
 document.addEventListener("DOMContentLoaded", () => {
   const nvidiaPathsElement = document.getElementById("nvidiaPaths");
-  const cachePaths = getNvidiaCachePaths();
-
-  // Actualiza el contenido HTML para mostrar las rutas
-  nvidiaPathsElement.innerHTML = cachePaths.map((path) => `<p>${path}</p>`).join("");
-});
-
-// Funcion de modal de confirmacion
-const { ipcRenderer } = require("electron");
-
-document.addEventListener("DOMContentLoaded", () => {
   const deleteCacheButton = document.getElementById("deleteCacheButton");
   const modal = document.getElementById("confirmModal");
   const confirmDeleteButton = document.getElementById("confirmDeleteButton");
   const closeModalElements = modal.querySelectorAll(".delete, .cancelButton");
   const procesoElement = document.getElementById("proceso");
 
-  // Mostrar el modal cuando el usuario haga clic en el botón
+  // Obtener rutas de caché desde el preload
+  const cachePaths = window.api.getNvidiaCachePaths();
+
+  // Actualiza el contenido HTML para mostrar las rutas
+  nvidiaPathsElement.innerHTML = cachePaths.map((texto) => `<li>${texto}</li>`).join("");
+
+  // Mostrar el modal al hacer clic en el botón
   deleteCacheButton.addEventListener("click", () => {
     modal.classList.add("is-active");
   });
@@ -36,13 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
   confirmDeleteButton.addEventListener("click", () => {
     modal.classList.remove("is-active"); // Oculta el modal
     procesoElement.innerHTML = "⏳ Iniciando limpieza..."; // Muestra mensaje de inicio
-    ipcRenderer.send("clear-nvidia-cache"); // Envía el evento para limpiar
+    window.api.send("clear-nvidia-cache", {});
   });
 
-  // Recibe las actualizaciones del proceso de limpieza y las muestra en el HTML
-  ipcRenderer.on("update-process", (_, message) => {
-    const procesoElement = document.getElementById("proceso");
-    procesoElement.innerHTML += `<p>${message}</p>`;
+  // Recibir actualizaciones del proceso y mostrarlas en la interfaz
+  window.api.on("update-process", (message) => {
+    procesoElement.innerHTML += `<li>${message}</li>`;
 
     // Desplaza automáticamente al final para ver el último mensaje
     const container = procesoElement.closest(".card-content-proceso");

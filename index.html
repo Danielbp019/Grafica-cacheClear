@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <!-- Política de Seguridad de Contenido (CSP) estricta -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self';">
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; connect-src 'self';">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Limpieza de caché para gráfica</title>
     <link href="node_modules/bulma/css/bulma.min.css" rel="stylesheet" />
@@ -34,7 +34,9 @@
             <div class="card fixed-card">
                 <div class="card-content">
                     <div class="content">
-                        <div id="nvidiaPaths"></div>
+                        <div id="nvidiaPaths">
+                            <ul></ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +46,9 @@
             <div class="card fixed-card">
                 <div class="card-content-proceso">
                     <div class="content">
-                        <div id="proceso"></div>
+                        <div id="proceso">
+                            <ul></ul>
+                        </div>
                     </div>
                 </div>
             </div>

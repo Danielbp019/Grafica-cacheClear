@@ -2,8 +2,6 @@
 
 Borra los archivos contenidos en las carpetas de DXCache y GLCache de NVIDIA en la ruta "C:\Users\NombreUsuario\AppData\Local\NVIDIA" para que la gráfica pueda volver a crear cachés de los juegos y aplicaciones en uso.
 
-## 📥 [Descargar la herramienta - Grafica Cache Clear](https://github.com/Danielbp019/Grafica-cacheClear/raw/main/ejecutable/Grafica-cacheClear-win32-x64.exe)
-
 ## Imágenes del proyecto
 
 - **Vista del proyecto:**

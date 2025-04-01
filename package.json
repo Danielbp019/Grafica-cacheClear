@@ -1,6 +1,6 @@
 {
   "name": "grafica-cacheclear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "App en electron para limpiar el cache de la tarjeta gráfica",
   "main": "main.js",
   "scripts": {

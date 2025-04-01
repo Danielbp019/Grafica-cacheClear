@@ -3,7 +3,7 @@
   src: url("../fonts/AlexBrush/AlexBrush-Regular.ttf") format("truetype");
 }
 
-/* Firma*/
+/* Firma */
 #miFirma {
   font-family: "AlexBrush", cursive;
   font-weight: 400;
@@ -15,12 +15,19 @@
 /* Ajustar el card del textarea */
 .fixed-card {
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .fixed-card .card-content-proceso {
   height: 180px; /* Mantiene el tamaño fijo */
   overflow-y: auto; /* Permite el desplazamiento vertical */
   white-space: pre-line;
+  margin-left: 1rem;
+}
+
+/* Ajustar el padding dentro de .card-content para reducir el espacio */
+.card .card-content {
+  padding: 1rem; /* Espacio más amplio dentro del contenido */
 }
 
 /* Ajustar el alto del footer */
@@ -43,12 +50,14 @@ body {
   margin: 0; /* Elimina márgenes para evitar desplazamiento */
 }
 
+/* Ajuste moderado en la sección que contiene los cards class="section" */
 .section {
   padding-top: 0; /* Elimina el espacio superior de la sección */
-  margin-top: 1.5rem; /* Asegura que no haya márgenes innecesarios */
+  padding-bottom: 1rem; /* Espacio inferior adecuado */
+  margin-top: 1.5rem; /* Mantiene el margen superior de la sección */
 }
 
-/* Ventana modal */
+/* Ajustes al modal */
 .modal-card {
   max-width: 400px; /* Ajusta el ancho del modal */
 }
